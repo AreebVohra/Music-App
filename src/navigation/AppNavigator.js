@@ -17,8 +17,8 @@ export default createAppContainer(
     // Read more at https://reactnavigation.org/docs/en/auth-flow.html
     //Main: MainTabNavigator,
     Onboard: OnboardingScreen,
-    SignIn: SigninScreen,
     SignUp: SignupScreen,
+    SignIn: SigninScreen,
     Album: AlbuminfoScreen,
     Play: PlayScreen,
     Albums: AlbumCategoryScreen,
