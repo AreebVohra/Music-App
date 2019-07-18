@@ -32,7 +32,7 @@ export default class SignupScreen extends Component {
                         <InputWithLabel label="BIRTHDAY" />
                     </View>
                     <View style={{ flex: 1, alignSelf: 'stretch', flexDirection: 'column' }} />
-                    <Footer Nextlink="SignIn"/>
+                    <Footer Nextlink="SignIn" {...this.props}/>
                     <View style={{ flex: 1, alignSelf: 'stretch', flexDirection: 'column' }} />
                 </View>
             </View >
