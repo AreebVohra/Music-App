@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { AntDesign } from "@expo/vector-icons";
 
 
 const Footer = (props) => {
-    const { Nextlink } = props
+    const { Nextlink, navigation } = props
     return (
         <View style={styles.mainView}>
             <View style={styles.cells} >
@@ -16,13 +16,12 @@ const Footer = (props) => {
             <View style={styles.cells} >
                 <Image source={require('../assets/images/twitterIcon.png')} />
             </View>
-            <View style={{ flex: 3, alignItems: 'flex-end' }} >
-                <Text
-                    onPress={() => this.navigation.navigate(Nextlink)}
-                    style={styles.nextText}>
-                    Next <AntDesign name="right" size={18} color='#95989A'
-                    />
-                </Text>
+            <View style={{ flex: 3, alignItems: 'flex-end' }}>
+                <TouchableOpacity onPress={() => navigation.navigate(Nextlink)}>
+                    <Text style={styles.nextText}>
+                        Next <AntDesign name="right" size={18} color='#95989A'/>
+                    </Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
