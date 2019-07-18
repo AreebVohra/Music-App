@@ -6,7 +6,7 @@ export default class OnboardingScreen extends Component {
 
     componentDidMount(){
         setTimeout(() => {
-            this.props.navigation.navigate('SignIn')
+            this.props.navigation.navigate('SignUp')
         }, 4000);
     }
 
