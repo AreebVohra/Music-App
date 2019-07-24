@@ -1,78 +1,36 @@
-import React from 'react';
-import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import AlbuminfoScreen from '../screens/Album_info';
+import AlbumCategoryScreen from '../screens/AlbumCategory';
 
-const config = Platform.select({
-  web: { headerMode: 'screen' },
-  default: {},
-});
+const AlbuminfoStack = createStackNavigator({
+  AlbumInfo: AlbuminfoScreen,
+}, {
+    headerMode: "none",
+    navigationOptions: {
 
-const HomeStack = createStackNavigator(
-  {
-    Home: HomeScreen,
-  },
-  config
+    }
+  }
 );
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
-  ),
-};
+const AlbumsCategoryStack = createStackNavigator({
+  AlbumsCategory: AlbumCategoryScreen,
+}, {
+    headerMode: "none",
+    navigationOptions: {
 
-HomeStack.path = '';
-
-const LinksStack = createStackNavigator(
-  {
-    Links: LinksScreen,
-  },
-  config
+    }
+  }
 );
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
-  ),
-};
 
-LinksStack.path = '';
+const tabBarNavigation = createBottomTabNavigator({
+  AlbuminfoStack,
+  AlbumsCategoryStack,
 
-const SettingsStack = createStackNavigator(
-  {
-    Settings: SettingsScreen,
-  },
-  config
-);
-
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
-  ),
-};
-
-SettingsStack.path = '';
-
-const tabNavigator = createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
-});
-
-tabNavigator.path = '';
-
-export default tabNavigator;
+}, {
+    tabBarOptions: {
+      showLabel: false
+    }
+  });
+export default tabBarNavigation;
