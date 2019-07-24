@@ -16,7 +16,7 @@ export default class SignupScreen extends Component {
 
                     <View style={{ flex: 1, alignSelf: 'stretch', flexDirection: 'column' }} />
                     <View style={{ flex: 1, alignSelf: 'stretch', alignItems: 'center', justifyContent: 'center' }} >
-                        <HeaderText title="Sign Up" />
+                        <HeaderText title="Sign up" />
                     </View>
                     <View style={{ flex: 1, alignSelf: 'stretch', flexDirection: 'column' }} />
                     <View style={{ flex: 1, alignSelf: 'stretch', flexDirection: 'column' }}>

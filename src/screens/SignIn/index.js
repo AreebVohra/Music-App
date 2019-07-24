@@ -16,7 +16,7 @@ export default class SigninScreen extends Component {
 
                     <View style={{ flex: 1, alignSelf: 'stretch', flexDirection: 'column' }} />
                     <View style={{ flex: 1, alignSelf: 'stretch', alignItems: 'center', justifyContent: 'center' }} >
-                        <HeaderText title="Sign In" />
+                        <HeaderText title="Sign in" />
                     </View>
                     <View style={{ flex: 1, alignSelf: 'stretch', flexDirection: 'column' }} />
                     <View style={{ flex: 1, alignSelf: 'stretch', flexDirection: 'column' }}>
@@ -27,7 +27,7 @@ export default class SigninScreen extends Component {
                     </View>
                     <View style={{ flex: 1, alignSelf: 'stretch', flexDirection: 'column' }} />
                     <View style={{ flex: 1, alignSelf: 'stretch', flexDirection: 'column' }}>
-                        <Footer Nextlink="SignIn" {...this.props} />
+                        <Footer Nextlink="Album" {...this.props} />
                     </View>
                     <View style={{ flex: 1, alignSelf: 'stretch', flexDirection: 'column' }} />
                     <View style={{ flex: 1, alignSelf: 'stretch', flexDirection: 'column' }} />
