@@ -4,6 +4,33 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 import HeaderText2 from '../../components/HeaderText2';
 import { Entypo, AntDesign } from "@expo/vector-icons";
 import SongList from '../../components/SongsList';
+import Layout from '../../constants/Layout';
+
+
+let songs = [
+    {
+        id: 1,
+        name: "Consideration",
+        duration: "2:16"
+    },
+    {
+        id: 2,
+        name: "James Joint",
+        duration: "2:13"
+    },
+    {
+        id: 3,
+        name: "Kiss It Better",
+        duration: "2:14"
+    },
+    {
+        id: 3,
+        name: "Kiss It Better",
+        duration: "2:14"
+    },
+    
+];
+
 
 export default class AlbuminfoScreen extends Component {
     constructor() {
@@ -27,7 +54,7 @@ export default class AlbuminfoScreen extends Component {
                         <HeaderText2 title="Troye Sivan" />
                     </View>
                 </View>
-                <View style={{ flex: 2, alignSelf: 'stretch', flexDirection: 'row', paddingLeft: 20, paddingRight: 20 }}>
+                <View style={{ flex: 1, alignSelf: 'stretch', flexDirection: 'row', paddingLeft: 20, paddingRight: 20 }}>
                     <View style={{ flex: 1, alignSelf: 'stretch' }} >
                         <Image style={{ height: 170, width: "90%" }} source={require('../../assets/images/album-image.png')} />
                     </View>
@@ -45,9 +72,25 @@ export default class AlbuminfoScreen extends Component {
                         </View>
                     </View>
                 </View>
-                <View style={{ flex: 4, alignSelf: 'stretch',flexDirection:'column', paddingLeft: 20, paddingRight: 20, }}>
-                    <SongList />
-                </View>
+                <View style={{flex:1}}></View>
+                {
+                    songs.map((item) => (
+
+                        <View style={[Layout.tableRow,{flex:0.5}]}>
+                            <View style={Layout.tableCell}>
+                                <Text>{item.id}</Text>
+                            </View>
+                            <View style={Layout.tableCell}>
+                                <Text>{item.name}</Text>
+                            </View>
+                            <View style={Layout.tableCell}>
+                                <Text>{item.duration}</Text>
+                            </View>
+                        </View>
+                    ))
+                }
+                <View style={{flex:1}}></View>
+
             </View>
         );
     }
