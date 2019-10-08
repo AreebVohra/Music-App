@@ -16,10 +16,10 @@ export default createAppContainer(
     // You could add another route here for authentication.
     // Read more at https://reactnavigation.org/docs/en/auth-flow.html
     //Main: MainTabNavigator,
+    Album: AlbuminfoScreen,
     Onboard: OnboardingScreen,
     SignUp: SignupScreen,
     SignIn: SigninScreen,
-    Album: AlbuminfoScreen,
     Play: PlayScreen,
     Albums: AlbumCategoryScreen,
     Home: HomeScreen,

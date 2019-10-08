@@ -19,7 +19,7 @@ const Layout = {
     width: width, height: height
   },
   tableRow: {
-    flex: 1,
+    flex: 0.5,
     alignSelf: 'stretch',
     flexDirection: 'row'
   },
