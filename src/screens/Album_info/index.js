@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+//import { DocumentPicker, FileSystem } from 'expo'
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 
 import HeaderText2 from '../../components/HeaderText2';
 import { Entypo, AntDesign } from "@expo/vector-icons";
-import SongList from '../../components/SongsList';
 import Layout from '../../constants/Layout';
+
 
 
 let songs = [
@@ -28,7 +29,7 @@ let songs = [
         name: "Kiss It Better",
         duration: "2:14"
     },
-    
+
 ];
 
 
@@ -39,6 +40,16 @@ export default class AlbuminfoScreen extends Component {
             focused: true,
         }
     }
+
+    componentDidMount() {
+        // let aaa = await DocumentPicker.getDocumentAsync({type:'audio/*',copyToCacheDirectory:true,})
+        // console.log(aaa)
+        // let abc = await FileSystem.getInfoAsync(FileSystem.cacheDirectory+"/DocumentPicker/e8d95174-72e3-4120-9680-88e63b6a52e8.mp3",{})
+        // console.log(abc)
+
+    }
+
+
     render() {
         const { focused } = this.state
         const icon = focused ? "hearto" : "heart";
@@ -72,25 +83,24 @@ export default class AlbuminfoScreen extends Component {
                         </View>
                     </View>
                 </View>
-                <View style={{flex:1}}></View>
+                <View style={{ flex: 1 }}></View>
                 {
-                    songs.map((item) => (
+                    songs.map((item, index) => (
 
-                        <View style={[Layout.tableRow,{flex:0.5}]}>
-                            <View style={Layout.tableCell}>
+                        <View style={Layout.tableRow} key={index}>
+                            <View style={{ flex: 1, alignItems: 'center', alignSelf: 'center' }}>
                                 <Text>{item.id}</Text>
                             </View>
-                            <View style={Layout.tableCell}>
+                            <View style={{ flex: 1, alignItems: 'center', alignSelf: 'center' }}>
                                 <Text>{item.name}</Text>
                             </View>
-                            <View style={Layout.tableCell}>
+                            <View style={{ flex: 1, alignItems: 'center', alignSelf: 'center' }}>
                                 <Text>{item.duration}</Text>
                             </View>
                         </View>
                     ))
                 }
-                <View style={{flex:1}}></View>
-
+                <View style={{ flex: 2 }}></View>
             </View>
         );
     }
